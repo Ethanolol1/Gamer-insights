@@ -158,7 +158,7 @@ statistic, p_value = stats.mannwhitneyu(multiplayer_SWL, singleplayer_SWL)
 p_value = "{:.2e}".format(p_value)
 axes[0].text(0.7, 0.95, f'p-value: {str(p_value)}', ha='center', va='center', transform=axes[0].transAxes)
 axes[0].text(0.7, 0.9, f'Mann-whitney statistic: {statistic:.3f}', ha='center', va='center', transform=axes[0].transAxes)
-plt.show()
+
 
 # Bar graph for GAD
 sns.barplot(data=playstyle_filter, x='Playstyle', y='GAD_T', ax=axes[1])
@@ -192,7 +192,7 @@ sns.barplot(x=avg_GAD.index, y=avg_GAD.values, ax=axes[0])
 axes[0].set_xlabel('Country')
 axes[0].set_ylabel('Average GAD_T Score')
 axes[0].set_title('Average GAD_T Score by Country')
-plt.show()
+
 
 # Kruskal-Wallis test for GAD_T by country
 statistic, p_value = stats.kruskal(*[filtered_df['GAD_T'][filtered_df['Residence'] == country]
@@ -221,3 +221,4 @@ print(comparison)
 p_value = "{:.2e}".format(p_value)
 axes[1].text(0.5, 0.9, f'p-value: {str(p_value)}', ha='center', va='center', transform=axes[1].transAxes)
 axes[1].text(0.5, 0.8, f'Kruskal Coefficient: {statistic:.3f}', ha='center', va='center', transform=axes[1].transAxes)
+plt.show()
